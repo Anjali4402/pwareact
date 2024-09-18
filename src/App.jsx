@@ -18,20 +18,31 @@ function App() {
     <>
       <Router>
         <Navbar bg="dark" variant="dark">
-          <Container  className='d-flex flex-column flex-md-row'>
-         <div>
+          <Container className='d-flex flex-column flex-md-row'>
+            <div className='d-flex'>
+            <Navbar.Brand href="/">{t('navbar')}</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">{t('home')}</Nav.Link>
               <Nav.Link as={Link} to="/scan">{t('scan')}</Nav.Link>
               <Nav.Link as={Link} to="/generate">{t('generate')}</Nav.Link>
             </Nav>
-         </div>
+            </div>
 
             <div>
             <LanguageSelector />
             </div>
           </Container>
         </Navbar>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/scan" element={<ScannerReader/>} />
+          <Route path="/generate" element={<QRGenerator/>} />
+          <Route path="/user" element={<User />} />
+        </Routes>
+
+
+        {/* <LanguageSelector /> */}
 
       </Router>
     </>
