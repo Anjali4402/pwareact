@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Html5QrcodeScanner } from 'html5-qrcode';
+import { useTranslation } from 'react-i18next';
 
 const ScannerReader = () => {
+
+    const { t } = useTranslation();
 
     const [scanResutl, setScanResult] = useState(null);
 
@@ -88,7 +91,7 @@ const ScannerReader = () => {
 
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
-        <h1>QR Code Scanning</h1>
+        <h1>{t('qrcodescan')}</h1>
         {
             scanResutl ?
             <div>

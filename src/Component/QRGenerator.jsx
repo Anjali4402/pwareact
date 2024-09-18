@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 
 const QRGenerator = () => {
+
+    const { t } = useTranslation();
+
     const [userDetails, setUserDetails] = useState({
         username: '',
         mobile: '',
@@ -43,7 +48,7 @@ const QRGenerator = () => {
 
     return (
         <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '2rem' }}>
-            <h1>QR Code Generator</h1>
+            <h1>{t('qrgenerator')}</h1>
 
             <form onSubmit={handleSubmit}>
                 <div>
@@ -68,7 +73,7 @@ const QRGenerator = () => {
             </form>
 
             <div style={{ marginTop: '2rem' }}>
-                <h2>QR Code will display here</h2>
+                <h2>{t('displayqr')}</h2>
                 {qr && (
                     <>
                         <button onClick={downloadImage}>Click here to download QR Code</button> <br /> <br />

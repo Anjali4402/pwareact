@@ -6,21 +6,29 @@ import { Link, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import ScannerReader from './Component/ScannerReader';
 import QRGenerator from './Component/QRGenerator';
+import LanguageSelector from './Component/Language/LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 
 function App() {
+
+  const { t } = useTranslation();
+
   return (
     <>
       <Router>
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="/">{t('navbar')}</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to="/scan">Scan</Nav.Link>
-              <Nav.Link as={Link} to="/generate">Generate</Nav.Link>
-              <Nav.Link as={Link} to="/user">Users</Nav.Link>
+              <Nav.Link as={Link} to="/">{t('home')}</Nav.Link>
+              <Nav.Link as={Link} to="/scan">{t('scan')}</Nav.Link>
+              <Nav.Link as={Link} to="/generate">{t('generate')}</Nav.Link>
             </Nav>
+
+            <div>
+            <LanguageSelector />
+            </div>
           </Container>
         </Navbar>
 
@@ -30,6 +38,10 @@ function App() {
           <Route path="/generate" element={<QRGenerator/>} />
           <Route path="/user" element={<User />} />
         </Routes>
+
+
+        {/* <LanguageSelector /> */}
+
       </Router>
     </>
   );

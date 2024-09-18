@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const [location, setLocation] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     let intervalId;
@@ -61,15 +64,24 @@ const Home = () => {
 
   return (
     <div className="home-page">
+
+<div>
+      <h1>{t('welcome')}</h1>
+      <p>{t('description')}</p>
+      {/* <LanguageSelector /> */}
+    </div>
+      
+
+
       <Button variant="dark" onClick={handleRequestLocation}>
-        Request Location Permission
+      {t('requestPermission')}
       </Button>
 
       {location && (
         <div className="mt-4">
-          <h2 className="text-xl">Your Location:</h2>
-          <p>Latitude: {location.latitude}</p>
-          <p>Longitude: {location.longitude}</p>
+          <h2 className="text-xl">{t('location')}:</h2>
+          <p>{t('lat')}: {location.latitude}</p>
+          <p>{t('long')}: {location.longitude}</p>
         </div>
       )}
 

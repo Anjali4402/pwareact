@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css';
+// import './i18n.js'; // import i18n config
+import './Component/Language/i18n.js'
 
 {
   /* The following line can be included in your src/index.js or App.js file */

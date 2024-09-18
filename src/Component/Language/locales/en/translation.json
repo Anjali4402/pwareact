@@ -1,0 +1,16 @@
+{
+    "welcome": "Welcome to our website!",
+    "description": "This is a multi-language application.",
+    "requestPermission" : "Request Location Permission",
+    "location" : "Your Location",
+    "long" : "Longitude",
+    "lat" : "Latitude",
+    "qrcodescan" : "QR Code Scanning",
+    "qrgenerator" : "QR Code Generator",
+    "displayqr" : "QR Code will display here",
+    "navbar": "Navbar",
+    "home" : "Home",
+    "scan" : "Scan",
+    "generate" : "Generate"
+  }
+  
