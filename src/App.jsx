@@ -18,7 +18,7 @@ function App() {
     <>
       <Router>
         <Navbar bg="dark" variant="dark">
-          <Container  className='d-flex flex-column flex-d-row'>
+          <Container  className='d-flex flex-column flex-md-row'>
          <div>
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/">{t('home')}</Nav.Link>
@@ -32,16 +32,6 @@ function App() {
             </div>
           </Container>
         </Navbar>
-
-        {/* <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/scan" element={<ScannerReader/>} />
-          <Route path="/generate" element={<QRGenerator/>} />
-          <Route path="/user" element={<User />} />
-        </Routes> */}
-
-
-        {/* <LanguageSelector /> */}
 
       </Router>
     </>
